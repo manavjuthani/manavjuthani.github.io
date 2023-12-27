@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'Rethink Sans';
+    src: url('RethinkSans-VariableFont_wght.ttf') format('truetype');
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Background color of webpage*/
+body {
+    background-color: #FAF9F6;
+    margin: 0;
+}
+
+/*Header of the website*/
+header {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-family: 'Rethink Sans';
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    background-color:#FAF9F6;
+    z-index: 2000;
+    border-bottom: 2px solid #800020;
+    top: 0px;
+}
+
+.header-links{
+    display: flex;
+    align-items: center;
+    gap: 40px
+}
+
+#name {
+    text-decoration: none;
+    color: black;
+}
+
+#socials, #designsocial {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s ease-in-out;
+}
+
+#designsocial {
+    border: 5px solid #800020;
+    box-shadow: 7px 3px 5px #800020;
+    padding: 0.75vw; /* Use relative units */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#designsocial:hover {
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/*Introduction container*/
+
+.intro-container {
+    margin-top: 70px;
+    position: relative;
+    display: flex;
+}
+
+.introduction {
+    font-family: 'Rethink Sans';
+    margin-top: 5vh; /* Use relative units */
+    width: 30vw; /* Use relative units */
+    max-width: 400px;
+}
+
+.empty-space{
+    height: 1px;
+}
+
+#resume {
+    text-decoration: none;
+    color: black;
+    border: 5px solid #800020;
+    box-shadow: 7px 3px 5px #800020; /* Use relative units */
+    padding: 0.5vw; /* Use relative units */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#resume:hover {
+    box-shadow: none;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+/*Image section*/
+.image-container {
+    display: flex;
+    margin-top: 5vh; /* Use relative units */
+    margin-left: 23vh;
+}
+
+.images {
+    position: relative;
+    border: 5px solid #800020;
+    box-sizing: border-box;
+    margin-left: 5vw; /* Use relative units */
+    opacity: 1;
+    display: flex;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.images img {
+    width: 100%;
+    max-width: 25vw; /* Use relative units */
+    height: auto;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+/* Text design */
+.hover-text {
+    position: absolute;
+    width: 15vw; /* Use relative units */
+    top: 5vh; /* Use relative units */
+    left: 6vw; /* Use relative units */
+    color: black;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.images:hover {
+    opacity: 0.75;
+}
+
+/* Text that shows up when hovering over image */
+.images:hover > .hover-text {
+    display: flex;
+    opacity: 1;
+}
+
+/* Projects section */
+.project-info {
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 5vw; /* Use relative units */
+    max-width: 70vw; /* Use relative units */
+    text-align: center;
+}
+
+.project-description{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.project-box:hover{
+    opacity: 0.75;
+}
+
+.project-box {
+    background-color: white;
+    width: 100%; /* Take 100% of the column width */
+    height: 20vw; /* Use relative units */
+    border: 5px solid #800020;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.project-box:hover > .project-description{
+    opacity: 1;
+}
+
+/*Languages and frameworks section*/
+/*Footer*/
+.footer{
+    border-top: 3px solid #800020;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Rethink Sans';
+    display: flex;
+}
