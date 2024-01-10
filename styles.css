@@ -10,10 +10,15 @@ main {
     justify-content: center;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 /*Background color of webpage*/
 body {
     background-color: #FAF9F6;
-    margin: 0;
+    overflow-x: hidden;
 }
 
 /*Header of the website*/
@@ -31,10 +36,11 @@ header {
     top: 0px;
 }
 
-.header-links{
+.header-links {
     display: flex;
     align-items: center;
-    gap: 40px
+    gap: 40px;
+    padding-top: 10px;
 }
 
 #name {
@@ -51,7 +57,7 @@ header {
 #designsocial {
     border: 5px solid #800020;
     box-shadow: 7px 3px 5px #800020;
-    padding: 0.75vw; /* Use relative units */
+    padding: 0.7vw; /* Use relative units */
     transition: box-shadow 0.2s ease-in-out;
 }
 
@@ -61,18 +67,18 @@ header {
 }
 
 /*Introduction container*/
-
 .intro-container {
     margin-top: 70px;
     position: relative;
     display: flex;
+    max-width: 90vw;
 }
 
 .introduction {
     font-family: 'Rethink Sans';
     margin-top: 5vh; /* Use relative units */
     width: 30vw; /* Use relative units */
-    max-width: 400px;
+    min-width: 30vw;
 }
 
 .empty-space{
@@ -108,14 +114,17 @@ header {
     opacity: 1;
     display: flex;
     transition: opacity 0.5s ease-in-out;
+    z-index: 1;
 }
 
 .images img {
-    width: 100%;
-    max-width: 25vw; /* Use relative units */
+    width: 450px;
+    max-width: 450px; /* Use relative units */
     height: auto;
     padding: 0;
     vertical-align: bottom;
+    overflow: hidden;
+    position: relative;
 }
 
 /* Text design */
@@ -124,21 +133,25 @@ header {
     width: 15vw; /* Use relative units */
     top: 5vh; /* Use relative units */
     left: 6vw; /* Use relative units */
-    color: black;
+    color: #800020;
     display: flex;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
+/* Opacity change */
 .images:hover {
     opacity: 0.75;
+    z-index: 10;
 }
 
-/* Text that shows up when hovering over image */
-.images:hover > .hover-text {
+
+.images:hover .hover-text{
     display: flex;
     opacity: 1;
+    z-index: 4;
 }
+
 
 /* Projects section */
 .project-info {
@@ -173,7 +186,6 @@ header {
     opacity: 1;
 }
 
-/*Languages and frameworks section*/
 /*Footer*/
 .footer{
     border-top: 3px solid #800020;
@@ -182,4 +194,112 @@ header {
     justify-content: center;
     font-family: 'Rethink Sans';
     display: flex;
+}
+
+/*Hamburger menu*/
+.menu-button{
+    display: none; 
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    color: black;
+    z-index: 2000;
+    pointer-events: auto;
+}
+
+.hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed to avoid overlapping with the header */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    color: #800020;
+}
+
+#ham-contact{
+    text-decoration: none;
+    color: black;
+}
+
+.ham-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 0, 32, 0.6);
+    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+    z-index: 1500;
+    pointer-events: none;
+}
+
+/* Responsive Styles for smaller screens */
+@media screen and (max-width: 768px){
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-links {
+        display: none;
+    }
+
+    .introduction {
+        width: 60%;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+    }
+
+    .project-box {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .menu-button {
+        display: block; /* Show on smaller screens */
+        z-index: inherit;
+    }
+
+    .hamburger-menu{
+        display: block; 
+        flex-direction: column;
+        top: 60px; /* Adjust as needed to avoid overlapping with the header */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        display: block;
+    }    
+
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .introduction{
+        order: 1;
+    }
+
+    .image-container{
+        order: 2;
+        margin-right: 200px;
+    }
+
+    .imagees img{
+        width: 100%;
+    }
 }
