@@ -19,6 +19,7 @@ body, html {
 body {
     background-color: #FAF9F6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 /*Header of the website*/
@@ -103,7 +104,6 @@ header {
 .image-container {
     display: flex;
     margin-top: 5vh; /* Use relative units */
-    margin-left: 23vh;
 }
 
 .images {
@@ -111,17 +111,13 @@ header {
     border: 5px solid #800020;
     box-sizing: border-box;
     margin-left: 5vw; /* Use relative units */
-    opacity: 1;
     display: flex;
-    transition: opacity 0.5s ease-in-out;
     z-index: 1;
 }
 
 .images img {
     width: 450px;
-    max-width: 450px; /* Use relative units */
     height: auto;
-    padding: 0;
     vertical-align: bottom;
     overflow: hidden;
     position: relative;
@@ -131,29 +127,34 @@ header {
 .hover-text {
     position: absolute;
     width: 15vw; /* Use relative units */
-    top: 5vh; /* Use relative units */
-    left: 6vw; /* Use relative units */
+    min-width: 350px;
     color: #800020;
     display: flex;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
-/* Opacity change */
-.images:hover {
-    opacity: 0.75;
-    z-index: 10;
+.images:hover img{
+    filter: blur(2px);
+    transition: filter 0.5s ease-in-out;
+    z-index: 0;
 }
 
 
 .images:hover .hover-text{
     display: flex;
     opacity: 1;
-    z-index: 4;
 }
 
 
 /* Projects section */
+.projects{
+    margin: auto;
+}
+
 .project-info {
     color: black;
     display: grid;
@@ -168,18 +169,13 @@ header {
     transition: opacity 0.5s ease-in-out;
 }
 
-.project-box:hover{
-    opacity: 0.75;
-}
-
 .project-box {
     background-color: white;
     width: 100%; /* Take 100% of the column width */
     height: 20vw; /* Use relative units */
     border: 5px solid #800020;
     box-sizing: border-box;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    overflow: auto;
 }
 
 .project-box:hover > .project-description{
@@ -230,15 +226,23 @@ header {
 .ham-overlay{
     display: none;
     position: fixed;
+    background-color: rgba(1, 1, 1, 0.6);
+    backdrop-filter: blur(3px); 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 0, 32, 0.6);
-    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-    z-index: 1500;
-    pointer-events: none;
+    pointer-events: all;
+    z-index: -1;
 }
+
+.nav-links{
+    pointer-events: all;
+    display: none;
+    position: static;
+    z-index: 500;
+}
+
 
 /* Responsive Styles for smaller screens */
 @media screen and (max-width: 768px){
@@ -266,7 +270,7 @@ header {
     }
 
     .menu-button {
-        display: block; /* Show on smaller screens */
+        display: block;
         z-index: inherit;
     }
 
@@ -280,9 +284,12 @@ header {
         z-index: 1000;
     }
 
-    .nav-links a {
-        padding: 15px;
+    .nav-links a{
+        padding: 70px;
         display: block;
+        cursor: pointer;
+        font-size: xx-large;
+        color: white !important;
     }    
 
     .intro-container {
@@ -294,12 +301,18 @@ header {
         order: 1;
     }
 
-    .image-container{
+    .image-container, .images{
         order: 2;
-        margin-right: 200px;
+        justify-content: center;
+        align-items: center;
     }
 
-    .imagees img{
-        width: 100%;
+    .hover-text{
+        width: 10vw;
+        min-width: 350px;
+        position: absolute;
+        left: 50%; /* relative to nearest positioned ancestor or body element */
+        top: 50%; /*  relative to nearest positioned ancestor or body element */
+        transform: translate(-50%, -50%); /* relative to element's height & width */
     }
 }
