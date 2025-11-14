@@ -3,7 +3,7 @@
 <html>
     <head>
     <link rel="stylesheet" href="styles.css">
-    <script src="functions.js"></script>
+    <script src="functions.js" defer></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1"
@@ -14,92 +14,79 @@
     </title>
 
     <body>
-        <div class="header">
-            <header>
-                <h2><a href="https://manavjuthani.github.io" id="name">Manav Juthani</a></h2>
-                <div class="header-links">
-                    <a href="https://www.linkedin.com/in/manav-juthani-818621205/" id="socials" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/manavjuthani" id="socials" target="_blank">GitHub</a>
-                    <a href="mailto:manavjuthani@gmail.com" id="designsocial" target="_blank">Contact Me!</a>
-                </div>
-                <div class="hamburger-menu">
-                    <button class="menu-button" onclick="toggleMenu()">☰</button>
-                    <!-- Navigation menu -->
-                    <div class="ham-overlay"></div>
-                    <div class="nav-links" onclick="toggleMenu()">
-                        <a href="https://www.linkedin.com/in/manav-juthani-818621205/" id="socials" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/manavjuthani" id="socials" target="_blank">GitHub </a>
-                        <a href="mailto:manavjuthani@gmail.com" id="ham-contact" target="_blank">Contact Me!</a>
-                    </div>
-                </div>
-            </header>
-        </div>
-
-        <main>
-            <div class="intro-container">
+        <main class="content-wrapper">
+            <section class="intro-container">
                 <div class="introduction">
-                    <h2>I'm Manav, nice to meet you and welcome to my website!</h2>
-                    <p>I am a student currently pursuing a Bachelor of Science in Data Science at Simon Fraser University in Vancouver, Canada. 
+                    <h1>Manav Juthani</h1>
+
+                    <p>Hey, welcome! I'm Manav. I'm currently pursuing a Bachelor of Science in Data Science at Simon Fraser University. I'm passionate about building and creating things, and I'm always looking for new challenges and opportunities to learn and grow. Want to get in contact?
+                        Check out my links below! 
                     </p>
-                    <div class="empty-space"></div>
-                        <a href="Resume Manav Juthani.pdf" id="resume" target="_blank">Resume</a>
-                </div>
-                <div class="image-container">
-                    <div class="images">
-                        <img src="london.jpeg">
-                        <div class="hover-text">
-                            <h4 style="font-family: 'Rethink Sans';">Visiting Trafalgar Square in London while on my exchange semester in England!
-                                                                    The opportunity to navigate a new country while meeting students from all over the world
-                                                                    was one I will never forget and am immensely grateful for. 
-                            </h4>
-                        </div>
+                <div class="link-row">
+                    <a href="https://github.com/manavjuthani" class="icon-link" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.385 7.866 10.911.575.105.786-.25.786-.557 0-.274-.01-1.002-.016-1.968-3.202.696-3.877-1.543-3.877-1.543-.523-1.329-1.277-1.684-1.277-1.684-1.043-.713.079-.699.079-.699 1.152.081 1.758 1.184 1.758 1.184 1.026 1.758 2.69 1.25 3.346.955.104-.744.401-1.25.728-1.537-2.555-.291-5.243-1.277-5.243-5.686 0-1.256.449-2.284 1.185-3.088-.119-.29-.513-1.461.113-3.047 0 0 .966-.309 3.165 1.18.918-.255 1.903-.383 2.884-.388.98.005 1.966.133 2.885.388 2.197-1.489 3.162-1.18 3.162-1.18.627 1.586.233 2.757.114 3.047.738.804 1.184 1.832 1.184 3.088 0 4.42-2.693 5.392-5.258 5.676.413.356.782 1.061.782 2.138 0 1.543-.014 2.786-.014 3.168 0 .309.208.668.793.554C20.212 21.38 23.5 17.083 23.5 12 23.5 5.648 18.352.5 12 .5Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/manav-juthani-818621205/" class="icon-link" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.941v5.667H9.35V9h3.414v1.561h.048c.476-.9 1.637-1.852 3.368-1.852 3.601 0 4.266 2.37 4.266 5.455v6.288ZM5.337 7.433c-1.144 0-2.071-.928-2.071-2.073 0-1.144.927-2.071 2.071-2.071 1.145 0 2.072.927 2.072 2.071 0 1.145-.927 2.073-2.072 2.073Zm1.777 13.019H3.559V9h3.555v11.452ZM21.5 0h-19A2.5 2.5 0 0 0 0 2.5v19A2.5 2.5 0 0 0 2.5 24h19a2.5 2.5 0 0 0 2.5-2.5v-19A2.5 2.5 0 0 0 21.5 0Z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:manavjuthani@gmail.com" class="icon-link" target="_blank" aria-label="Email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.217l9 5.4 9-5.4V6H3Zm18 12V9.383l-8.553 5.129a1 1 0 0 1-1.054 0L3 9.383V18h18Z"/>
+                        </svg>
+                    </a>
+                    <a href="Resume-MJ.pdf" class="icon-link" id="resume" target="_blank" aria-label="Resume">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.414L17.586 8H14V4.414ZM6 4h6v6h6v10H6V4Zm2 2v2h8V6H8Zm0 4v2h8v-2H8Zm0 4v2h5v-2H8Z"/>
+                        </svg>
+                    </a>
                     </div>
                 </div>
-            </div>
+            </section>
             <div class="projects">
                 <div class="projects-title">
-                    <h1 style="font-family: 'Rethink Sans';">My Projects</h1>
+                    <h1 style="font-family: 'Moliga DEMO';">Projects</h1>
                 </div>
                 <div class="project-blocks">
                     <div class="project-info">
-                        <div class="project-box">
-                            <h3 style="font-family: 'Rethink Sans';">Project 1</h3>
+                        <div class="project-box pomotimer">
+                            <h3 style="font-family: 'Rethink Sans';">
+                                <a href="https://github.com/manavjuthani/Pomodoro-Timer-Web-App" target="_blank" class="project-title-link">Pomotimer</a>
+                            </h3>
                             <div class="project-description">
-                                <p style="font-family: 'Rethink Sans';">This section of the webpage will grow as I build my skills as a developer and 
-                                create some interesting projects! Keep your eyes peeled for new things to come!</p>
+                                <p style="font-family: 'Rethink Sans';">A Pomodoro timer is a time management technique that breaks work into focused 25-minute intervals, separated by short breaks. This method helps enhance study sessions by maintaining concentration, reducing mental fatigue, and improving productivity through structured work periods.</p>
+                                <div class="tech-stack">
+                                    <div class="tech-badge">HTML/CSS</div>
+                                    <div class="tech-badge">JavaScript</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-box">
-                            <h3 style="font-family: 'Rethink Sans';">Project 2</h3>
+                        <div class="project-box budget-tracker">
+                            <h3 style="font-family: 'Rethink Sans';">
+                                <a href="https://github.com/manavjuthani/Python-Budget-Tracking-Script" target="_blank" class="project-title-link">Personal Budget Tracker</a>
+                            </h3>
+                            <div class="project-description">
+                                <p style="font-family: 'Rethink Sans';">This section of the webpage will grow as I build my skills as a developer and 
+                                    create some interesting projects! Keep your eyes peeled for new things to come!</p>
+                                <div class="tech-stack">
+                                    <div class="tech-badge">Python</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-box desktop-ai-assistant">
+                            <h3 style="font-family: 'Rethink Sans';">Desktop AI Assistant</h3>
                             <div class="project-description">
                                 <p style="font-family: 'Rethink Sans';">This section of the webpage will grow as I build my skills as a developer and 
                                     create some interesting projects! Keep your eyes peeled for new things to come!</p>
                             </div>
                         </div>
-                        <div class="project-box">
-                            <h3 style="font-family: 'Rethink Sans';">Project 3</h3>
-                            <div class="project-description">
-                                <p style="font-family: 'Rethink Sans';">This section of the webpage will grow as I build my skills as a developer and 
-                                    create some interesting projects! Keep your eyes peeled for new things to come!</p>
-                            </div>
-                        </div>
-                        <div class="project-box">
-                            <h3 style="font-family: 'Rethink Sans';">Project 4</h3>
-                            <div class="project-description">
-                                <p style="font-family: 'Rethink Sans';">This section of the webpage will grow as I build my skills as a developer and 
-                                    create some interesting projects! Keep your eyes peeled for new things to come!</p>
-                            </div>
-                        </div>
+                
                     </div>
                 </div>
             </div>
-
-            <div class="footer">
-                <footer>
-                    <p>
-                        Hope you enjoyed your visit!
-                    </p>
-                </footer>
             </div>
         </main>
     </body>
