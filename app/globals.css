@@ -72,6 +72,13 @@ body {
     display: flex;
     gap: 32px;
     z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
 }
 
 .nav-link {
@@ -440,12 +447,20 @@ body {
 @media screen and (max-width: 768px) {
     .nav {
         top: 20px;
-        right: 20px;
-        gap: 20px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 24px;
+    }
+    
+    .nav-hidden {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+        pointer-events: none;
     }
     
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 1.2rem;
     }
     
     .hero {

@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 const navItems = [
   { id: 'skills', label: 'Skills', href: '#skills' },
   { id: 'projects', label: 'Projects', href: '#projects' },
@@ -60,10 +62,32 @@ const techIconsSvg = {
 }
 
 export default function Home() {
+  const [navVisible, setNavVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past 100px
+        setNavVisible(false)
+      } else {
+        // Scrolling up or at top
+        setNavVisible(true)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
     <main className="site-container">
       {/* Navigation */}
-      <nav className="nav">
+      <nav className={`nav ${navVisible ? '' : 'nav-hidden'}`}>
         {navItems.map((item) => (
           <a key={item.id} href={item.href} className="nav-link">
             {item.label}
