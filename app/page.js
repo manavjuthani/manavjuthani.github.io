@@ -29,6 +29,7 @@ const projectItems = [
     period: '2025',
     title: 'Gemini ESP32 AI Assistant',
     description: 'Built a standalone voice assistant using an ESP32 microcontroller with I2S microphone for high-fidelity audio. Features a hybrid processing pipeline with OpenAI Whisper for speech-to-text and Google Gemini API for natural conversational responses.',
+    link: 'https://github.com/manavjuthani/geminiAssistant',
     techIcons: ['cpp', 'python', 'ai'],
   },
   {
